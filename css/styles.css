@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header {
     background-color: var(--primary-bg-color);
+   
     
     
 }
@@ -105,9 +106,23 @@ img {
 
 .page-header.portfolio {
     border-bottom: 1px solid #ECECEC;
-    /* margin-bottom: 94px; */
+    
+    
 }
 
+
+/* .page-header.portfolio .header-nav {
+    position: relative;
+} */
+
+.current-pointer {
+    position: absolute;
+    bottom: 0;
+    width: 78px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+}
 
 
 
@@ -150,6 +165,8 @@ img {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .site-nav .link:hover,
@@ -172,6 +189,35 @@ img {
 
 
 }
+
+.link.current {
+    position: relative;
+    
+    
+}
+
+.link.current::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    display: flex;
+    bottom: 0;
+    
+    
+
+
+    background-color: var(--accent-color);
+    content: "";
+    bottom: 0;
+    right: 0;
+    
+
+
+}
+
+
 
 
 
@@ -206,6 +252,8 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -329,6 +377,8 @@ img {
     border: 0;
     border-radius: 4px;
     padding: 6px 22px;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-filter:hover,
@@ -590,6 +640,10 @@ img {
     width: 20px;
     height: 20px;
     fill: var(--icon-gray-color);
+
+    
+
+
 }
 
 .social-links .social-item {
@@ -656,6 +710,8 @@ img {
     border: 1px solid var(--icon-gray-color);
     border-radius: 4px;
     color: var(--icon-gray-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -729,6 +785,13 @@ img {
     background-color: var(--footer-social-bg);
     border-radius: 50%;
     color: var(--white-text);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    
+
+    
      
 }
 
@@ -748,13 +811,15 @@ img {
     width: 20px;
     height: 20px;
     fill: currentColor;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    
+
+    
     
 }
 
-/* .footer-social-item:hover .container-social-link,
-.footer-social-item:focus .container-social-link {
-    background-color: var(--accent-color);
-} */
 
 
 .email .email-link:focus,
@@ -811,7 +876,16 @@ img {
 
 .map-link {
     color: var(--white-text)
+
+    
 }
+
+
+.map .map-link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 .map-link:hover,
 .map-link:focus {
     color: var(--accent-color);
@@ -835,6 +909,8 @@ img {
     line-height: 1.71;
        
     letter-spacing: 0.03em;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -916,6 +992,8 @@ img {
 .project-item {
     /* position: relative; */
     display: block;
+
+    
     
     
     
@@ -937,6 +1015,11 @@ img {
 
 .project-item:hover .project-actions-text {
     opacity: 1;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
 
 .project-actions-box {
@@ -944,13 +1027,18 @@ img {
 }
 
 .project-actions-text {
+    display: block;
 
     position: absolute;
     width: 322px;
     height: 168px;
+    
+    
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, +100%);
+    
+    /* background-color: rgba(33, 150, 243, 0.9); */
 
     /* padding: 63px 24px; */
 
@@ -964,12 +1052,20 @@ img {
 
     opacity: 0;
 
+    /* transform: translateY(+100%); */
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 
 }
 
 
 .media-content-package {
     position: relative;
+    overflow: hidden;
+
+
+
+
 }
 
 
@@ -985,6 +1081,10 @@ img {
     height: 100%;
     background-color: var(--accent-color);
     opacity: 0;
+    
+
+    transform: translateY(+100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -1002,13 +1102,33 @@ img {
 
 
 .project-actions-box:hover .media-content-package::before,
-.project-item:focus .media-content-package::before {
+.project-item:focus .media-content-package::before
+
+ {
     opacity: 0.9;
+    transform: translateY(0);
 }
 
 .project-item:focus .project-actions-text {
     opacity: 1;
+    /* transform: translateY(0); */
+    
+    /* background-color: rgba(33, 150, 243, 0.9); */
+
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+
+
+
+
+
+
+
+
 
 
 
