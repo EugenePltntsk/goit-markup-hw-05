@@ -59,13 +59,13 @@
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
 
-          <button type="button" class="button">Замовити послугу</button>
+          <button data-modal-open type="button" class="button">Замовити послугу</button>
         </div>
       </section>
 
-      <div class="backdrop is-hidden">
+      <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-          <button type="button" class="modal-close-button">
+          <button data-modal-close type="button" class="modal-close-button">
             <svg class="button-close-icon" width="11" height="11">
               <use href="./images/icons.svg#icon-close-cross"></use>
             </svg>
@@ -107,17 +107,25 @@
 
       <section class="section">
         <div class="container">
+          
           <h2 class="section-title">Чим ми займаємося</h2>
           <ul class="work-list list">
-            <li class="item">
+            <li class="item information">
+               <div class="work-information">
+                <p class="work-description">Десктопні додатки</p>
+              </div>
               <img
                 src="./images/computer.jpg"
                 alt="Человек работает за стационарным компьютером"
                 class="work-list-computer"
                 width="370"
               />
+             
             </li>
-            <li class="item">
+            <li class="item information">
+               <div class="work-information">
+                <p class="work-description">Мобільні додатки</p>
+              </div>
               <img
                 src="./images/laptop.jpg"
                 alt="Человек работает за ноутбуком"
@@ -125,7 +133,10 @@
                 width="370"
               />
             </li>
-            <li class="item">
+            <li class="item information">
+               <div class="work-information">
+                <p class="work-description">Дизайнерські рішення</p>
+              </div>
               <img
                 src="./images/tablet.jpg"
                 alt="Человек работает за планшетом"
@@ -424,6 +435,6 @@
     </footer>
 
     
-
+  <script src="./js/modal.js"></script>
   </body>
 </html>
